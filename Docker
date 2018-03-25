@@ -1,0 +1,35 @@
+ 2000  docker ps
+# it will display the running containers
+ 2001  docker run busybox:1.28 ls /
+# it wil run the container with ls command and disply docker files
+ 2002  docker run busybox:1.28 echo "hello ram
+# it will run the container with hello world command"
+ 2004  docker ps -a
+#it will display all containers
+ 2005  docker run --name 'echoed_ram' busybox:1.28 echo "hello ram"
+# it will create container with "ecjoed_ram" name and hellow ram command
+ 2007  docker images
+# it will display the images
+ 2009  docker start echoed_ram
+# it will start "echoed_ram" container
+
+ 2013  docker run -d busybox:1.28 sleep 1000
+# it will run in the background and display container id
+
+ 2025  docker run -rm busybox:1.28 sleep 1
+#it will delete image
+ 
+ 2036  docker inspect 70a1d9e03d0d66586348a0f71e3716d357b0da3559708163a84c6bf3a6d6be0a
+ # it will show the container meta data information
+
+docker exec -it "container name"
+# we can move to icside container
+
+docker build "filename"
+# we can convert docker file to image
+
+docker rm "continername"
+#we can delate container
+
+docker start/stop "container name"
+# it will start and stop the container"
