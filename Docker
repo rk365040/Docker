@@ -33,3 +33,6 @@ docker rm "continername"
 
 docker start/stop "container name"
 # it will start and stop the container"
+
+docker run -i -t "image name"
+# it will run image and move to container
