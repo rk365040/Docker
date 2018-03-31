@@ -1,0 +1,52 @@
+<<<<<<< HEAD
+#Build docker images by writting files
+---create file:touch Dockerfile
+vi Docker file
+---
+FROM alpain:3.5
+RUN apt-get update -y
+RUN apt-get yum -y
+RUN yum install jadk1.6 -y
+RUN yum install Maven -y
+------
+
+#Save file and run below command to convert to image
+docker build -t reponame/alpain .
+
+#run below command to convert image to container
+docker run -it reponame/alpain:tag
+
+-----
+#docker file instruction
+-- if you want run any command u can use RUN, for Copr CP
+#ex:
+FROM alpain:3.5
+RUN apt-get update -y && apt-get install -y \
+    git\
+    vim\
+    jdk\
+
+# CMD
+CMD [echo "hello world"]
+# copy
+cp source  destination
+
+----------
+#how to push images to docker hub
+---signup to docker hub
+--- login to docker hub user through cmd
+login --username=ra365040
+#u can use below command to push image to docker hub
+docker push ra365040/debian:1.01
+
+# how to change image name with same id
+docker tag id ra365040/debian:1.01
+
+#Link
+
+docker run -d -p 5000:5000 --link redis dockerapp:v0.3
+
+#
+#find container IP
+docker inspetc b1447adf9af4 | grep IP
+
